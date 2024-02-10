@@ -1,0 +1,28 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        table{
+            position: relative;
+            border-collapse: collapse;
+        }
+        th, td {
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid black;
+        }
+        h1{
+            padding: 2rem 0;
+        }
+        table.todo_tab tr:nth-child(even){
+            background-color: #c6c4c4;
+        }

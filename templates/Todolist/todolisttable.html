@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/todolist/todostyle.css' %}" />
+
+</head>
+<body>
+<div class="container">
+<h1>To-Do List Web App</h1>
+
+<table class="todo_tab">
+    <tr>
+        <th>S.No</th>
+        <th>TASK</th>
+        <th>Time Interval</th>
+        <th>STATUS</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        {% for to in todo %}
+        <td>{{to.id}}</td>
+        <td>{{to.task}}</td>
+        <td>{{to.time_interval}}</td>
+        <td><button onclick="changeColorToGreen(this)">Completed</button>
+            <button onclick="changeColorToBlue(this)">Pending</button>
+            <button onclick="changeColorToRed(this)">Cancelled</button>
+        </td>
+        <td><a href="/task/deletetask/{{to.id}}" >Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table> <br>
+<a href="/task/addtask" ><button>Add Task</button> </a>
+
+</div>
+</body>
+
+<script>
+function changeColorToGreen(cell) {
+    cell.style.backgroundColor = 'Green';
+    cell.style.color = 'White';
+}
+function changeColorToBlue(cell) {
+    cell.style.backgroundColor = 'Blue';
+    cell.style.color = 'White';
+}
+function changeColorToRed(cell) {
+    cell.style.backgroundColor = 'Red';
+    cell.style.color = 'White';
+}
+</script>
+</html>

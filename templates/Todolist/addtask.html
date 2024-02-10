@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Task</title>
+</head>
+<body>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <input type="submit" value="Submit" />
+
+<!--    <h1>Task Description</h1>-->
+<!--    Task : <input type="text" placeholder="Enter Your Task "> <br><br>-->
+<!--    Time-Interval : <input type="datetime-local" placeholder="Enter DateTime "> <br><br>-->
+<!--    Status : <input type="text" placeholder="Completed, Pending, Cancelled "> <br><br>-->
+<!--    <input type="submit" value="Submit" />-->
+
+</form>
+</body>
+</html>
